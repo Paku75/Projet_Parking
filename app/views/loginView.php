@@ -34,3 +34,11 @@
   </div>
 </div>
 <!-- END # MODAL ADD -->
+
+    <br><br>
+    <?php 
+        if(isset($erreur))
+        {
+            echo '<font color="red">'.$erreur."</font>";
+        }
+    ?>

@@ -2,32 +2,7 @@
 
 require_once "model.php";
 
-    function get_places($deb,$fin)
-    {
-        global $bdd;
-        
-        $requete = $bdd->prepare("SELECT * FROM liste_places,users WHERE liste_places.id_u = users.id_u LIMIT {$deb},{$fin}");
-        $requete->execute();
-        return $requete->fetchAll();
-    }
-
-    function get_attentes($deb,$fin)
-    {
-        global $bdd;
-        
-        $requete = $bdd->prepare("SELECT * FROM liste_attente,users WHERE liste_attente.id_u = users.id_u LIMIT {$deb},{$fin}");
-        $requete->execute();
-        return $requete->fetchAll();
-    }
-
-    function get_users($deb,$fin)
-    {
-        global $bdd;
-        
-        $requete = $bdd->prepare("SELECT * FROM users LIMIT {$deb},{$fin}");
-        $requete->execute();
-        return $requete->fetchAll();
-    }
+    
 
      function attribuer($id)
     {

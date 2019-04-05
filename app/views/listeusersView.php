@@ -1,48 +1,50 @@
-<?php
-    require("layoutView.php");
-?>
 
-<h1>Liste des attentes</h1>
+
+<h1>Liste des users</h1>
 
 <div class="table-responsive">
     <table id="myTable" class="table table-bordered display" style="width:100%">
         <thead>
             <tr>
                 <th>
-                    Num attente
+                    Login
                 </th>
                 <th>
-                    User
+                    Email
                 </th>
                 <th>
-                    Attribuer
+                    Mot de passe
+                </th>
+                <th>
+                    Modifier
                 </th>
             </tr>
         </thead>
         <tbody>
         <?php
-            require "../Controller/adminController.php";
-            foreach ($attentes as $attente)
+            foreach ($users as $user)
             {   ?>
                 <tr>
                     <td>
                         <label id="idPlace" for="id" class="control-label">
-                            <?php echo $attente['id_a']; ?>
+                            <?php echo $user['login']; ?>
                         </label>
                     </td>
                     <td>
                        <label id="login" for="login" class="control-label">
-                           <?php echo $attente['login']; ?>
+                           <?php echo $user['email']; ?>
                        </label>
                     </td>
                     <td>
-                       <div class="attribuer">
-                           <button id="attribuer_yes" class="btn btn-default"> 
-                               <i class="fa fa-check fa-lg"> </i>
-                           </button>
-                           <button id="attribuer_no" onclick="" class="btn btn-default"> 
-                               <i class="fa fa-times fa-lg"> </i>
-                           </button>
+                       <label id="date" for="date" class="control-label">
+                           <?php echo $user['mdp']; ?>
+                       </label>
+                    </td>
+                    <td>
+                        <div class="edit">
+                           <a id="btn_edit" onclick="return EditMovie.Onclick(this)" class="btn btn-default"> 
+                               <i id="edit" class="fa fa-trash fa-lg"> </i>
+                           </a>
                        </div>
                     </td>
                 </tr>
@@ -56,3 +58,4 @@
 
 <a href="http://localhost/projet-parking-final/app/View/adminView.php
 ">Revenir</a>
+
